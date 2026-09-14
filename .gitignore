@@ -220,3 +220,5 @@ __marimo__/
 # Auto-generated slide build output (curated decks live in slides/release/, built on Mac)
 slides/assembly.out/
 slides/assembly.out.*/
+
+.DS_Store
