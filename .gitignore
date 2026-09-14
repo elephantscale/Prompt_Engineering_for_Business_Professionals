@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Auto-generated slide build output (curated decks live in slides/release/, built on Mac)
+slides/assembly.out/
+slides/assembly.out.*/

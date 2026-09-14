@@ -1,0 +1,8 @@
+00-about.md
+01-how-ai-works.md
+02-anatomy-of-a-prompt.md
+03-business-scenarios.md
+04-advanced-techniques.md
+05-testing-evaluating.md
+06-prompt-systems-governance.md
+07-capstone.md
