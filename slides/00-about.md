@@ -103,8 +103,6 @@ Notes:
 
 <img src="../images/hiking-3.jpg" style="width:18%;"/> &nbsp; <!-- {"left" : 1.08, "top" : 6.08, "height" : 1.99, "width" : 2.25} --><img src="../images/ice-cream-3.png" style="width:25%;"/> &nbsp; <!-- {"left" : 3.36, "top" : 6.1, "height" : 1.92, "width" : 3.54} --><img src="../images/biking-1.jpg" style="width:18%;"/> &nbsp; <!-- {"left" : 6.92, "top" : 6.08, "height" : 1.99, "width" : 2.25} -->
 
-> Tip: open the **cohort intro form** on the course landing page, fill it in, and paste your
-> card into the class chat.
 
 
 # The Highest-Leverage Skill of the Decade
