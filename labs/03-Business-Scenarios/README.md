@@ -27,6 +27,12 @@ You'll use the R-T-C-C-F-E template from Module 2
 ([`prompt-template.md`](../../course-materials/prompt-template.md)) and, for your own org,
 fill in [`brand-voice-worksheet.md`](../../course-materials/brand-voice-worksheet.md).
 
+> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
+> custom instructions off**. Otherwise your saved settings change the output and you'll be
+> testing your preferences, not your prompt. In Claude use a new chat (and check Settings →
+> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
+> saved info / use a new chat.
+
 ## Steps
 
 1. **Load the brand voice first.** Paste `sample-brand-voice.md` into the chat (or save it
@@ -42,6 +48,11 @@ fill in [`brand-voice-worksheet.md`](../../course-materials/brand-voice-workshee
    question rather than a ticket (hint: Northstar Health, id 3). Draft the *right* move:
    escalate to a human, don't answer it.
 6. **Judge each artifact against the brand-voice guide** — not against "does it read nicely."
+7. **Make it yours.** Fill the first sections of
+   [`brand-voice-worksheet.md`](../../course-materials/brand-voice-worksheet.md) for your own
+   org — at least sections 1-3 (three words, "we sound like," "we do NOT sound like") and the
+   example sentence in section 6. That filled worksheet is the guide you'll paste next time,
+   in place of the sample.
 
 ## Prompt Starter
 
@@ -59,6 +70,54 @@ Customer message:
 [paste the Acme duplicate-charge email]
 
 If the policy doesn't cover something the customer asked, say so plainly rather than guessing.
+```
+
+For the **meeting summary** (Step 3), use `sample-meeting-notes.md`:
+
+```text
+You are summarizing internal meeting notes for teammates who missed the Q4 planning sync.
+Using ONLY the attached notes, produce three sections:
+- Decisions made (only what was actually decided),
+- Action items — one line each, with the owner named; if the notes don't say who owns it,
+  write "(owner unclear)" rather than guessing,
+- Open questions / parked items.
+Keep it tight. Do not invent an owner, a decision, or a date that isn't in the notes.
+
+Notes:
+[paste sample-meeting-notes.md]
+```
+
+For the **outbound email** (Step 4), use the River City promo message (id 2) and the policy:
+
+```text
+You are a support lead at Northwind Supply Co. Match the brand voice in the guide below.
+Draft a proactive reply to River City Events. They ask two things: can they still use the
+20% September promo on an annual plan, and do we offer nonprofit pricing.
+
+[paste sample-brand-voice.md]
+
+Use ONLY the attached return policy for any facts about pricing or terms. The policy does
+NOT mention nonprofit pricing — so do not invent a nonprofit rate. Say plainly that you're
+checking / routing that question and will follow up, and give a timeframe. No hype, no
+upselling. Keep it under 150 words.
+
+Customer message:
+[paste the River City promo email, id 2]
+```
+
+For the **compliance escalation** (Step 5), use the Northstar Health message (id 3):
+
+```text
+You are a support lead at Northwind Supply Co. Match the brand voice in the guide below.
+This message is a HIPAA/regulated-data question, NOT a support ticket. Do not give a
+compliance ruling and do not tell them whether it's safe to upload patient records. Draft a
+short, on-brand reply that thanks them, declines to rule on it, and routes it to the right
+human (privacy/legal) with a timeframe for follow-up.
+
+[paste sample-brand-voice.md]
+
+Customer message:
+[paste the Northstar Health email, id 3]
 ```
 
 ## Deliverable
@@ -133,6 +192,11 @@ and escalate what shouldn't be a prompt at all.
   for any refund facts" — and re-run.
 - **Summary assigns owners that aren't in the notes.** Add "if an owner is unclear, write
   '(owner unclear)'." This is a teachable catch, not a failure.
+- **Outbound email invents a nonprofit or promo rate.** River City asks about nonprofit
+  pricing and the September promo; the policy covers neither in dollar terms. The model
+  "helpfully" fills a number — e.g. "we offer a 15% nonprofit discount." Fix: "The policy
+  doesn't state a nonprofit rate. Don't invent one — say we're checking it and will follow
+  up." Re-run with "use only the attached policy; if it's not there, route it, don't guess."
 - **Student answers the Northstar question.** Redirect: "That's a HIPAA question. Your job is
   to route it, not rule on it."
 
@@ -197,6 +261,58 @@ Line by line:
 
 > Put them side by side. The weak one is longer and "nicer-sounding." The strong one is the
 > one you'd actually want sent to an annoyed enterprise customer.
+
+### Model answer - the meeting summary (using only the notes)
+
+Run the meeting-summary Prompt Starter on `sample-meeting-notes.md`. A strong result:
+
+```text
+Decisions
+- SSO can be pulled into early Q4, but only by pushing audit logs to Q1 (Marcus, ~3 weeks).
+- Budget allows one Nov–Dec contractor; no second permanent hire this quarter (Lee).
+
+Action items
+- Own the Delta follow-up promised "this week" — (owner unclear; Sam made the promise but
+  did not take it).
+- Bring a proposed Q4 roadmap to the Sep 12 meeting — Priya.
+- Decide on the temporary holiday-season contractor — (owner unclear; Dana raised it).
+
+Open questions / parked
+- Self-Serve price increase: parked, revisit after September numbers.
+- Bulk export (~1 week, many customers asking): not scheduled.
+- Status page has no owner — flagged as a gap; nobody assigned.
+```
+
+Why it's strong: every line is traceable to the notes, it names owners only where the notes
+name them, and — the teachable part — it flags the **status-page gap** and the unowned Delta
+follow-up as "(owner unclear)" instead of quietly assigning someone. A weak summary invents an
+owner for the status page or turns the parked price increase into a "decision."
+
+### Model answer - the CORRECT compliance escalation (the memorable beat)
+
+This is the one a solo student most needs to see. Northstar Health (id 3) asks whether it's
+safe to upload spreadsheets with patient names and record numbers. The **right** output does
+NOT rule on it — it routes it:
+
+```text
+Hi — thanks for checking with us before you start; that's exactly the right instinct.
+
+I'm not the right person to give you a compliance answer on uploading protected health
+information, and I don't want to guess on something that carries HIPAA obligations. I'm
+routing your question to our privacy team, who handle regulated-data and BAA questions
+directly. You'll hear back from them by Wednesday.
+
+In the meantime, please hold off on uploading any files with patient names or record numbers
+until they've confirmed the right approach.
+
+Thanks — Northwind Support.
+```
+
+Why it's correct: it (a) refuses to give a compliance ruling, (b) hands it to the right human
+with a timeframe, (c) adds a sensible "hold off until confirmed" safeguard, and (d) stays on
+brand — warm, plain, no hedging. An **incorrect** answer is any version that says "yes, it's
+safe/compliant" or "no, you can't" — that's the model (and the student) making a legal call
+that isn't theirs to make. If the reply rules either way, it fails, no matter how polite.
 
 ### Live demo click-path
 

@@ -47,12 +47,39 @@ over [`sample-support-emails.csv`](../assets/sample-support-emails.csv).
 4. **Save it as a reusable assistant.** Create a Project / Custom GPT / Gem. Put the role,
    constraints, source rule, and output format into the saved instructions so users only
    supply the input.
+
+   *Where to create it* (see `labs/SETUP.md`): **Claude** → Projects → New Project → add your
+   files to the project's knowledge; **ChatGPT** → Explore GPTs → Create; **Gemini** → Gems →
+   New Gem.
+
+> **Before the fresh-session test — clean slate.** Test in a **new or temporary chat** with
+> **memory and custom instructions off** — otherwise your global settings might be supplying
+> the role, not your saved assistant, and the test proves nothing. In Claude use a new chat
+> (and check Settings → Profile); in ChatGPT use **Temporary Chat**; in Gemini turn off saved
+> info.
+
 5. **Test the saved assistant** with a fresh input. Confirm someone who only provides the
    input gets the right output — no long prompt to paste.
 6. **Write the responsible-use note** (3 lines): what data may/may not go in, who signs off,
    and the verification step that always stays.
+
+   If you're solo, name the **role** that would sign off rather than a person — e.g. "a
+   manager reviews every compliance flag."
 7. **Add the "when not to use AI" line** for this specific prompt — the case where it should
    be handed to a human instead.
+
+   *A model to copy* — a 3-line responsible-use note plus a when-not-to-use line for the
+   support-triage example:
+
+   ```text
+   Data: only the approved-workspace CSV goes in; no client PII from other systems.
+   Sign-off: a support manager reviews every row flagged "compliance" before any reply.
+   Always verify: refund amounts are checked against billing before we act on them.
+   When NOT to use AI: any compliance/legal question — route it to a human, don't answer it.
+   ```
+8. **Self-score your entry** against [`evaluation-rubric.md`](../../course-materials/evaluation-rubric.md).
+   Fix anything below threshold (ship line: total ≥ 32, with Accuracy and Source handling both
+   ≥ 4) before you call it done.
 
 ## Prompt Starter
 
@@ -83,6 +110,11 @@ A strong entry is judged by whether a **colleague who has never seen the prompt*
 it correctly from your documentation alone. Check: are the inputs explicit? Is the review
 step concrete? Does the saved assistant actually carry the role, or did you leave it in a
 prompt you'd have to paste each time?
+
+**Working solo?** You are your own cold reader. Take a short break (or open a separate/incognito
+profile), then run the saved assistant using **only the input** — no pasting the prompt, no
+explaining it to yourself. If it produces the right output from input alone, it passes the
+cold-start test the same way a colleague would.
 
 ## Instructor Flow
 

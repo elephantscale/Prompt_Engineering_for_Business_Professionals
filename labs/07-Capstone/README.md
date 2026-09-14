@@ -52,8 +52,13 @@ Sample data (for the worked example or if you need a stand-in task):
    or an uncertainty flag. Be ready to say which failure it catches.
 7. **Package the winner**: fill in a [`library entry`](../../course-materials/prompt-library-template.md)
    and save it as a **Project / Custom GPT / Gem** so it's reusable, not retyped.
-8. **Write a 30-day adoption plan** (week-by-week handoff to your team).
-9. **Prepare a 2-3 minute demo**: problem → before → run it → guardrail → plan.
+8. **Write a 30-day adoption plan** (week-by-week handoff to your team). A working skeleton:
+   *wk1* — use it daily and log the misses; *wk2* — refine, lock the version, and write the
+   library entry; *wk3* — hand it to one colleague cold (they run it without you); *wk4* —
+   roll it to the team and set a re-test reminder for the next model update.
+9. **Prepare a 2-3 minute demo**: problem → before → run it → guardrail → plan. *Working
+   alone?* Record a 2-3 minute screen capture or write out the demo script, and self-score
+   against the [`capstone rubric`](../../course-materials/capstone-rubric.md).
 
 ## Prompt Starter
 
@@ -88,7 +93,8 @@ A capstone package containing:
 1. The **working prompt or prompt chain** (the actual text).
 2. A **before/after** with the time or quality gain named in numbers.
 3. At least one **deliberate guardrail**, and the failure it catches.
-4. A completed **library entry** (reusable by someone else).
+4. A completed **library entry** (reusable by someone else) — minimum fields: **id,
+   version, owner, source files, and the review step**.
 5. A **30-day adoption plan**.
 6. A short **demo** (live run or saved output).
 
@@ -155,10 +161,16 @@ Be deliberate: does this need a **chain** (the output of step 1 feeds step 2), a
 Score with the rubric. Identify the lowest criterion, add the one clause that fixes it,
 re-run, re-score. Keep the higher-scoring version and note *which clause* moved the number.
 
+> Saved context is the *point* of this capstone — your Project/GPT/Gem helps by baking in
+> the role and source. But when you're comparing two versions to pick a winner, run them in
+> a clean chat, so you're scoring the prompt, not your saved memory.
+
 ### Part 5 - Package (part of the 40)
 
 Fill in the library entry. Save the prompt as a Project / Custom GPT / Gem with the source
-material and role attached. Confirm it runs from the saved version, not your clipboard.
+material and role attached. The click-path: **Claude** — Projects → New Project → add your
+files to the project knowledge; **ChatGPT** — Explore GPTs → Create; **Gemini** — Gems → New
+Gem. Confirm it runs from the saved version, not your clipboard.
 
 ### Part 6 - Plan and present (15 min + demos)
 
@@ -189,8 +201,10 @@ Students should leave able to run it Monday and hand it off within a month.
 
 The capstone is complete when the participant has: a working prompt/chain, a numeric
 before/after, at least one deliberate guardrail, a completed library entry, a 30-day plan,
-and a delivered 2-3 minute demo. It scores at least a usable total on the capstone rubric,
-with Safety & judgment and Business fit both clearly addressed.
+and a delivered 2-3 minute demo. It scores **at least 18/30** on the
+[`capstone rubric`](../../course-materials/capstone-rubric.md) — with **Safety & judgment**
+and **Business fit** each scoring non-zero (aim for 3/5 or better on both), since a capstone
+that's unsafe or solves no real problem doesn't pass on total points alone.
 
 ---
 

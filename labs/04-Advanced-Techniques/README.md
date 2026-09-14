@@ -18,12 +18,24 @@ checkable steps beats one do-everything prompt.
 
 Your assigned assistant — **Claude, ChatGPT, or Gemini** — ideally the **reasoning/"thinking"**
 model for the review steps. Provided material:
-[`sample-meeting-notes.md`](../assets/sample-meeting-notes.md) and, for grounding,
-[`sample-return-policy.md`](../assets/sample-return-policy.md) or
-[`sample-quarterly-report.md`](../assets/sample-quarterly-report.md).
+[`sample-meeting-notes.md`](../assets/sample-meeting-notes.md) is the source doc this lab is
+built around. [`sample-return-policy.md`](../assets/sample-return-policy.md) and
+[`sample-quarterly-report.md`](../assets/sample-quarterly-report.md) are **optional alternate
+source docs** — if you'd rather run the chain on a policy Q&A or a report summary instead of
+the meeting-notes email, swap one of them in as the grounding source and keep every step's
+"use only the source" boundary. You don't need them for the default task.
+
+> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
+> custom instructions off**. Otherwise your saved settings change the output and you'll be
+> testing your preferences, not your prompt. In Claude use a new chat (and check Settings →
+> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
+> saved info / use a new chat.
 
 ## Steps
 
+0. **Set up.** Open [`sample-meeting-notes.md`](../assets/sample-meeting-notes.md) in the
+   course repo and **attach** (or paste) it into your clean chat. This is the source every
+   step grounds against — keep it in the conversation for the whole chain.
 1. **Pick the deliverable.** Default: turn the messy meeting notes into a polished
    **stakeholder update email**. (Or choose a recurring deliverable from your own work.)
 2. **Step 1 - Extract.** Prompt the model to pull decisions + action items + owners from the
@@ -56,6 +68,19 @@ from the notes? Is the tone plain and on brand? List specific fixes as bullets.
 
 STEP 4 - REVISE. Apply every fix from your review. Return the final email only.
 ```
+
+Then, for the comparison (Step 6), open a **fresh clean chat**, attach the same
+[`sample-meeting-notes.md`](../assets/sample-meeting-notes.md), and ask for the whole thing in
+**one** prompt — same task, no chain:
+
+```text
+Turn these meeting notes into a stakeholder update email: decisions first, then next steps
+with owners and dates. Under 200 words, plain and direct. Use only the attached notes; don't
+infer owners or decisions that aren't stated.
+```
+
+Same task, same source, same length target as the chain — the only variable is chain vs.
+one-shot. Put the two results side by side.
 
 ## Deliverable
 
@@ -131,6 +156,10 @@ They also learn restraint: a chain is overkill for a task one prompt handles.
   the clean extract.
 - **Chain and one-shot look identical.** The task may be too simple to need a chain — a valid
   finding. Note it: not everything needs chaining.
+- **No reasoning model on my plan.** Fine — the review step (Step 3) leans on reasoning, but
+  any model can self-critique if you make the criteria specific. Use your best available model
+  and note which one; the chain still works. If Step 3 rubber-stamps, tighten it (demand two
+  concrete problems) rather than blaming the model.
 
 ## Completion Criteria
 

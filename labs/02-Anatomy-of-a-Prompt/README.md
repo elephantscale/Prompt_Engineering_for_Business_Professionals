@@ -38,18 +38,27 @@ a hands-on account for. Provided material:
 No account for a second assistant is needed — this lab is all hands-on in your own. If you
 want a comparison, rerun the weak vs. strong pair in a reasoning model as well.
 
+> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
+> custom instructions off**. Otherwise your saved settings change the output and you'll be
+> testing your preferences, not your prompt. In Claude use a new chat (and check Settings →
+> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
+> saved info / use a new chat.
+
 ## Steps
 
 1. Open [`weak-prompts.md`](../assets/weak-prompts.md). Pick **three** prompts to rebuild
    (at least one that needs a source file — #2, #5, #6, or #8).
 2. For each, first **run the weak prompt as-is** in a fresh/temporary chat and keep the
-   result. This is your baseline — don't skip it; the measurement is the point.
+   result. This is your baseline — don't skip it; the measurement is the point. Working solo,
+   paste the weak prompt and its output into a scratch doc (or keep it in its own tab) so it's
+   still there to compare against later.
 3. Rewrite it using R-T-C-C-F-E. Not every block every time — add the blocks that remove a
    real failure for *this* task. For source-grounded prompts, attach the file and add the
    **source rule** ("use only this; if it isn't here, say so").
 4. Run the strong version in a fresh chat.
-5. Put the two results side by side and note **what changed** — accuracy, format, tone,
-   whether it stopped guessing. Name the single block that helped most.
+5. Put the two results side by side — the baseline you saved in step 2 next to the strong
+   output, in two tabs or pasted into the same scratch doc — and note **what changed**:
+   accuracy, format, tone, whether it stopped guessing. Name the single block that helped most.
 6. After three rewrites, distill what worked into your **personal prompt template**
    (start from [`prompt-template.md`](../../course-materials/prompt-template.md) and make it
    yours).
@@ -113,6 +122,15 @@ the rewrite is better.
 Add blocks that remove real failure modes for this task:
 
 - **#1 "Write a marketing email"** needs Role, audience, the offer, a length, and a tone.
+- **#2 "Summarize this"** needs the **source** attached
+  ([`sample-quarterly-report.md`](../assets/sample-quarterly-report.md)), a named reader (e.g. a
+  VP with five minutes), a length budget, and what the reader should *do* with it — otherwise
+  "summarize" has no target and you get a shapeless recap.
+- **#6 "Analyze our sales data"** needs the same report attached
+  ([`sample-quarterly-report.md`](../assets/sample-quarterly-report.md)) plus a **named
+  decision and metric** — "analyze" is undefined until you say *for what*. Point it at the
+  revenue/Self-Serve/Enterprise figures and ask a real question (e.g. "should we raise
+  Self-Serve pricing?") so it reasons toward a decision instead of listing numbers.
 - **#5 "Reply to this angry customer"** needs the **source** (the policy), a tone constraint,
   and a no-over-promising rule — otherwise the model invents refund terms.
 - **#8 "Explain our return policy"** is the danger case: without
@@ -128,6 +146,29 @@ For each pair, write one line: *"The strong version stopped guessing the refund 
 
 Distill your three rewrites into a personal template. Keep the blocks you used most and your
 own defaults (your common audiences, your house format, your standard source rule).
+
+"Done" looks like a template you've made *yours* — the six anatomy blocks kept as a skeleton,
+but every placeholder replaced with a sensible default you actually reuse. For example:
+
+```text
+# ROLE
+Act as an operations analyst writing for my leadership team.
+# TASK
+[Verb] [object] so that [outcome].          ← the one thing I change per task
+# CONTEXT
+Reader: a VP with 5 minutes before a meeting. Source: the file I attach below.
+# CONSTRAINTS
+Length: under 150 words. Tone: plain, direct, no hype.
+Use ONLY the attached material; if it isn't there, say "not in the source" — never guess.
+# FORMAT
+Bullets: 3 key points, 1 risk, 1 decision to make. Bold the numbers.
+# EXAMPLES
+(paste a past summary I was happy with, when the shape is hard to describe)
+```
+
+Notice most blocks are now filled with *your* standing defaults; only **Task** (and the
+attached source) changes from one job to the next. That's the payoff — you start from a
+90%-complete prompt instead of a blank box.
 
 ## Expected Result
 

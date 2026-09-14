@@ -24,6 +24,12 @@ Your assigned assistant — **Claude, ChatGPT, or Gemini**. Provided material:
   [`sample-brand-voice.md`](../assets/sample-brand-voice.md) — for repairing the broken refund prompt
 - [`evaluation-rubric.md`](../../course-materials/evaluation-rubric.md) — the scoring rubric
 
+> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
+> custom instructions off**. Otherwise your saved settings change the output and you'll be
+> comparing your preferences, not the prompts. In Claude use a new chat (and check Settings →
+> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
+> saved info / use a new chat.
+
 ## Steps
 
 1. **Fair test.** New/temporary chat, memory off — or your comparison is meaningless.
@@ -40,8 +46,30 @@ Your assigned assistant — **Claude, ChatGPT, or Gemini**. Provided material:
 ## Prompt Starter
 
 The two prompts to compare and the broken prompt are all in
-[`prompt-eval-pairs.md`](../assets/prompt-eval-pairs.md). Your repaired refund prompt should
-look roughly like:
+[`prompt-eval-pairs.md`](../assets/prompt-eval-pairs.md). They're reproduced here so you can
+run them without leaving this page.
+
+**Prompt A1 (thin)** — run this first on the support CSV:
+
+```text
+Look at these support emails and tell me what's important.
+```
+
+**Prompt A2 (framed)** — same input, new chat:
+
+```text
+You are a support team lead triaging Monday's queue. Using ONLY the attached
+support-emails CSV:
+1. Classify each email by type (billing, shipping, compliance, feature request,
+   cancellation, praise) and urgency (high/medium/low).
+2. Flag anything that is a compliance or legal question rather than a normal ticket.
+3. Give me a prioritized action list: what to handle first and why, in one line each.
+4. Note any email where we risk losing the customer.
+Do not invent details that aren't in the messages. If information is missing, say so.
+Output a table (id, customer, type, urgency, first action) followed by a 3-line summary.
+```
+
+Your repaired refund prompt (Part 3/4) should look roughly like:
 
 ```text
 You are a support lead at Northwind Supply Co. Match the attached brand voice. Using ONLY
@@ -88,6 +116,52 @@ classification, compliance flag, and format) returns a structured, defensible tr
 rubric should show A2 clearly ahead on Accuracy, Source handling, Format, and Completeness.
 The learning isn't "longer wins" — it's *which clause bought which point*.
 
+Score each output 1-5 on all eight criteria (these are the rows in
+[`evaluation-rubric.md`](../../course-materials/evaluation-rubric.md)):
+
+1. **Accuracy** — do the claims match the actual CSV, or are any invented?
+2. **Completeness** — did it cover every email, including the compliance/retention ones?
+3. **Format** — did it produce the requested shape (table + short summary), paste-ready?
+4. **Source handling** — did it stay inside the CSV instead of drifting to generic advice?
+5. **Tone/brand** — is the register right for a support lead's Monday queue?
+6. **Uncertainty** — did it flag what's missing rather than bluff a confident answer?
+7. **Reusability** — could you run this same prompt next Monday as a macro, unchanged?
+8. **Review burden** — how much editing before you'd act on it? (5 = ship at a glance.)
+
+Write a one-line reason next to every score. A score with no reason isn't a score, it's a vibe.
+
+#### A weak A1 output, scored line by line
+
+A1's thin prompt tends to return something like this — read it before you score, then see why
+it fails against the CSV:
+
+```text
+Looks like a busy inbox! The main themes are billing questions, some shipping delays, and a
+few happy customers. I'd start with the billing ones since money issues upset people the
+most, then work through the rest. Overall sentiment seems positive and most of these look
+routine — nothing here that can't wait until you've had your coffee. You've got this!
+```
+
+Now walk it line by line — this is exactly the critique the rubric forces out of you:
+
+- "Looks like a busy inbox!" / "You've got this!" — **off-register filler**; a triage tool
+  should output a queue, not a pep talk. (Tone/brand down, Review burden down.)
+- "The main themes are billing… shipping… happy customers" — **no per-email classification
+  and no ids**; you can't act on a theme, and it silently dropped emails. (Completeness down,
+  Format down.)
+- "I'd start with the billing ones" — a **guess by category, not a prioritized action list**;
+  no first action, no "why," no one-line-each. (Format down, Reusability down.)
+- "Overall sentiment seems positive… most of these look routine" — **misses the compliance /
+  legal email entirely**, the one item that must not wait; confident and wrong. (Accuracy
+  down, Completeness down, Source handling down.)
+- "nothing here that can't wait" — **no retention flag**; the email where we risk losing the
+  customer is exactly what a lead needs surfaced first. (Completeness down, Uncertainty down.)
+
+That's why A1 lands around 18 while A2 lands near 39. Notice the failure isn't that A1 is
+*short* — it's that every missing clause in the prompt maps to a missing column in the output.
+A2 wins because it *asks* for the id, the classification, the compliance flag, the action, and
+the retention note — so it gets them.
+
 ### Part 2 - Name the lever
 
 For each gap between A1 and A2, point to the clause: the **source boundary** stopped invented
@@ -96,8 +170,16 @@ details (Accuracy/Source), the **"flag compliance" line** caught the Northstar/H
 
 ### Part 3 - Diagnose the broken prompt
 
-The broken prompt ("give them whatever they want… world's best genius… lots of exclamation
-points… mention our new products") fails in at least five named ways — no policy boundary,
+Here is the broken prompt exactly as written — diagnose *this* text, don't work from the
+paraphrase:
+
+```text
+Reply to this customer and give them whatever they want so they're happy. You are the
+world's best customer service genius. Make it long and detailed and use lots of exclamation
+points to show enthusiasm! Also mention our new products. The customer was charged twice.
+```
+
+It fails in at least five named ways — no policy boundary,
 off-brand persona, wrong length, ill-timed upsell, no source/format. Have students label each
 failure **by mode** (hallucination risk, tone miss, format miss, etc.), not just "it's bad."
 
