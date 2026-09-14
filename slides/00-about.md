@@ -111,9 +111,9 @@ Notes:
 
 ## Andrew Ng on AI
 
-* There's a lingering misconception that getting value from AI requires engineers and budgets.
-* It is indeed expensive to *train* cutting-edge foundation models
-* But it's now very inexpensive — and often free — to *use* AI to get real work done, right from a browser. The skill that separates results is **how you ask**.
+* Myth: getting value from AI needs engineers and budgets.
+* True: *training* frontier models is expensive.
+* But *using* AI is now cheap — often free — right from a browser. The differentiator is **how you ask**.
 
 ![](../images/token-prices.png)
 
@@ -164,19 +164,19 @@ Source: https://www.deeplearning.ai/the-batch/falling-llm-token-prices-and-what-
 ---
 
 ## Andrew Ng at University of Exeter Faculty of Environment, Science and Economy.
-* The name of this faculty stood out to me as a particularly forward-looking way to organize an academic division.
-* Having Computer Science sit alongside Environmental Science and the Business School creates natural opportunities for
-* collaboration across these fields.
+* A forward-looking way to organize an academic division.
+* Computer Science alongside Environmental Science and the Business School.
+* Natural collaboration across the fields.
 
 ---
 
 
 ## Future
 
-* Every organization must become an AI organization
-* Not just building AI, but using it to advance every kind of work.
-* This doesn't mean abandoning your expertise.
-* It means keeping your judgment while letting AI enhance everything you do — and a good prompt is how your judgment reaches the model.
+* Every organization must become an AI organization.
+* Not just *building* AI — *using* it to advance every kind of work.
+* Not abandoning your expertise — keeping your judgment while AI enhances the work.
+* A good prompt is how your judgment reaches the model.
 
 ---
 
