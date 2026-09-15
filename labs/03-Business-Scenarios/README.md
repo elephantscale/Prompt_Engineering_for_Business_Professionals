@@ -20,7 +20,8 @@ Your primary tool is **ChatGPT Enterprise** (our Elephant Scale — Business acc
 step below leads with it. **Claude** and **Gemini** stay available as secondary demos.
 Provided material:
 
-- [`sample-brand-voice.md`](../assets/sample-brand-voice.md) — the house style to match
+- [`sample-brand-voice.md`](../assets/sample-brand-voice.md) — the default house style to match (Northwind Supply Co.)
+- [`brand-voice-options.md`](../assets/brand-voice-options.md) — *optional:* pick a different brand nearer your world (Brightline, Meridian, Summit, CareBridge, Junction)
 - [`sample-support-emails.csv`](../assets/sample-support-emails.csv) — the customer queue
 - [`sample-return-policy.md`](../assets/sample-return-policy.md) — the policy to ground replies in
 - [`sample-meeting-notes.md`](../assets/sample-meeting-notes.md) — messy notes to summarize
@@ -37,9 +38,11 @@ fill in [`brand-voice-worksheet.md`](../../course-materials/brand-voice-workshee
 
 ## Steps
 
-1. **Load the brand voice first.** Paste `sample-brand-voice.md` into the chat. To reuse it,
-   save it in a **ChatGPT Project** (sidebar) or a **Custom GPT** (alternatives: Claude
-   Projects / Gemini Gems) so every draft in this session inherits it.
+1. **Load the brand voice first.** Paste `sample-brand-voice.md` into the chat — or pick a
+   different brand from [`brand-voice-options.md`](../assets/brand-voice-options.md) if one is
+   closer to your world. To reuse it, save it in a **ChatGPT Project** (sidebar) or a
+   **Custom GPT** (alternatives: Claude Projects / Gemini Gems) so every draft in this session
+   inherits it.
 2. **Customer reply (grounded).** Take the duplicate-charge email from Acme (id 1) in the
    support CSV. Draft a reply that matches the brand voice **and** is grounded in the return
    policy — it must state the real refund terms and timeframe, not invent them.
