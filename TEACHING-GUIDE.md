@@ -12,7 +12,7 @@ open while that lab runs.*
 Do this on the **actual account and machine you'll teach from**, on today's plan, from the
 room's network. "It worked in the demo video" is not a plan.
 
-- [ ] Sign in to your assistant (Claude lead; ChatGPT / Gemini equivalents noted in labs).
+- [ ] Sign in to your assistant (ChatGPT lead; Claude / Gemini equivalents noted in labs).
 - [ ] Start a **temporary / new chat** and confirm you can toggle memory & custom instructions off.
 - [ ] Confirm **file upload** works — upload `labs/assets/sample-quarterly-report.md` and ask for
       a one-line summary. Several labs depend on upload.

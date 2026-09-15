@@ -58,7 +58,7 @@ Introductory to intermediate. No coding required.
 
 - A modern browser and internet access.
 - **A hands-on account for a current AI assistant (Claude, ChatGPT, or Gemini)** — one per
-  student. The labs are assistant-agnostic; examples lead with Claude and note the ChatGPT
+  student. The labs are assistant-agnostic; examples lead with ChatGPT and note the Claude
   and Gemini equivalents. See `labs/SETUP.md`.
 - Sample business files are provided in `labs/assets/`; reusable templates in
   `course-materials/`.
