@@ -53,7 +53,7 @@ Elephant Scale
   3. **Chain** *only if* one prompt can't do it reliably — extract → draft → review.
   4. **Evaluate** against the rubric. Score it; don't eyeball it.
   5. **Refine** — change one thing at a time, re-score.
-  6. **Package** the winner as a library entry, saved as a Project / Custom GPT / Gem.
+  6. **Package** the winner as a library entry, saved as a Custom GPT / Project / Gem.
 
 > Don't reach for a chain or reasoning model to look sophisticated. Use the simplest thing that clears the bar.
 
@@ -61,14 +61,14 @@ Elephant Scale
 
 ## Build It in Your Assistant
 
-* Do this in **your own account** — Claude, ChatGPT, or Gemini.
+* Do this in **ChatGPT Enterprise** (our Business workspace) — Claude or Gemini also work.
 * Save the final version where it's reusable:
+  - **ChatGPT → a Custom GPT / Project** — role and files baked in.
   - **Claude → a Project** — source material and instructions attached.
-  - **ChatGPT → a Custom GPT** — role and files baked in.
   - **Gemini → a Gem** — standing instructions.
 * That saved, named assistant *is* your deliverable running — not a prompt you retype.
 
-> A prompt you paste from a doc each time is a draft. A saved Project/GPT/Gem is a product.
+> A prompt you paste from a doc each time is a draft. A saved Custom GPT/Project is a product.
 
 ---
 

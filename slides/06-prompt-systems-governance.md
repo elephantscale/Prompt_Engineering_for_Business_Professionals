@@ -11,7 +11,7 @@ Elephant Scale
 * By the end you can:
   - Package a winning prompt so someone else gets the **same result**.
   - **Version** prompts — improve without losing what worked.
-  - Save a prompt as a reusable assistant — a **Project / Custom GPT / Gem**.
+  - Save a prompt as a reusable assistant — a **Custom GPT / Project / Gem**.
   - Apply **responsible-use** rules and know the tasks where the answer is "don't use AI."
 
 > The skill isn't writing one brilliant prompt. It's making good prompts **repeatable**.
@@ -69,8 +69,8 @@ v1.0 — initial version
 ## Saving a Reusable Assistant
 
 * Highest form of reuse: bake role and rules into a saved assistant — every run starts from the same place, no long copy-paste.
+  - **ChatGPT → Custom GPTs / Projects** — a named assistant with baked-in instructions and files (our class tool).
   - **Claude → Projects** — persistent instructions + reference files for a body of work.
-  - **ChatGPT → Custom GPTs** — a named assistant with baked-in instructions and files.
   - **Gemini → Gems** — a saved custom assistant with its own instructions.
 * Put **role, constraints, source rule, output format** in the saved instructions. Users just provide the input.
 
@@ -131,7 +131,7 @@ v1.0 — initial version
 
 * Take one strong prompt from earlier (Lab 03 or Lab 04).
 * **Document and version** it as a full library entry using the template.
-* **Save** it as a Project / Custom GPT / Gem so anyone can run it.
+* **Save** it as a Custom GPT / Project / Gem so anyone can run it.
 * Add a 3-line **responsible-use / when-not-to-use** note.
 
 > You leave Module 6 with the first real entries of a library your team could adopt Monday.

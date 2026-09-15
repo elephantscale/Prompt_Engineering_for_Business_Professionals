@@ -75,7 +75,7 @@ Step 4 (revise): Apply the fixes. Return the final email only.
 * The pattern (the idea behind "RAG," no code):
   - Attach or paste the source.
   - Instruct: *"answer using only this; quote the relevant line; if it's not here, say 'not in the document'."*
-* Scales from one pasted doc to a saved knowledge base in a Project / Custom GPT / Gem.
+* Scales from one pasted doc to a saved knowledge base in a Custom GPT / Project / Gem.
 
 ```text
 Using only the attached return policy, answer the customer's question. Quote the exact
@@ -88,7 +88,7 @@ clause you relied on. If the policy doesn't address it, say "not covered in this
 
 ## System Prompts & Saved Context
 
-* A **system prompt** (saved instructions, or a Project/Custom GPT/Gem) sets persistent behavior — no re-explaining every chat.
+* A **system prompt** (saved instructions, or a Custom GPT/Project/Gem) sets persistent behavior — no re-explaining every chat.
 * Good things to bake in:
   - role and audience, brand voice, the source boundary rule, your default output format, "flag uncertainty."
 * Turns a one-off clever prompt into a **reusable, consistent tool** your team shares — exactly Module 6.

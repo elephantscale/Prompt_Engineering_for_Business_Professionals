@@ -12,7 +12,7 @@ Elephant Scale
   - Say in plain language what an LLM actually does.
   - Explain **tokens, context window, temperature, hallucination** — no jargon.
   - Pick a **fast** vs. a **reasoning** model on purpose.
-  - Choose deliberately between Claude, ChatGPT, Gemini.
+  - Choose deliberately between ChatGPT, Claude, Gemini.
   - See *why* the prompt is the steering wheel.
 
 > The goal isn't to make you an engineer. It's to stop the assistant surprising you.
@@ -50,7 +50,7 @@ Elephant Scale
 
 ## Key Terms Without the Jargon
 
-* **Model** — the specific "brain" (Claude Opus, GPT-5, Gemini). Newer/larger = more capable, slower, pricier.
+* **Model** — the specific "brain" (GPT-5, Claude Opus, Gemini). Newer/larger = more capable, slower, pricier.
 * **Token** — the chunk it reads and writes in. ~¾ of a word. Limits are measured in these.
 * **Context window** — its short-term memory: prompt + attachments + conversation, in tokens.
   - Huge today — a whole report fits. But **not permanent** — a new chat starts blank.
@@ -96,10 +96,10 @@ steps where being wrong halfway through wrecks the whole answer.
 ## The 2026 Assistant Landscape
 
 * Three frontier assistants dominate business use. Huge overlap — any handles ~80% of daily work. Differences show at the **edges**.
+  - **ChatGPT (OpenAI)** — our class tool. Broadest surface: data analysis, image gen, Custom GPTs & Projects, voice, connectors (Gmail, Slack, Drive). The swiss-army default.
   - **Claude (Anthropic)** — writing, careful long-document reading, complex multi-part instructions; **flags its own uncertainty**. Projects hold reusable context.
-  - **ChatGPT (OpenAI)** — broadest surface: data analysis, image gen, Custom GPTs, voice, connectors. The swiss-army default.
   - **Gemini (Google)** — fits Google Workspace; very large context window; strong multimodal.
-* In class you each have **your own account** on one. Examples lead with Claude, note the others.
+* In class you each use **ChatGPT Enterprise** (our Business workspace). Examples lead with ChatGPT; we note the Claude/Gemini equivalents.
 
 > No assistant is best at everything, and rankings shift every release. Treat any "X is smartest" claim as perishable.
 
