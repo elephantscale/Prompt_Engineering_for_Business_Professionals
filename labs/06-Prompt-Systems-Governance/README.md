@@ -8,9 +8,9 @@
 ## Goal
 
 Take one strong prompt you already built in this course, **document and version** it as a
-reusable library entry, **save it** as a reusable assistant (a Claude Project, ChatGPT
-Custom GPT, or Gemini Gem), and attach a short **responsible-use / when-not-to-use** note —
-so anyone on your team gets the same result you did.
+reusable library entry, **save it** as a reusable assistant (a ChatGPT Project or Custom GPT,
+a Claude Project, or a Gemini Gem), and attach a short **responsible-use / when-not-to-use**
+note — so anyone on your team gets the same result you did.
 
 ## Time
 
@@ -18,9 +18,12 @@ so anyone on your team gets the same result you did.
 
 ## Tools
 
-**Your own assistant** — Claude (lead), ChatGPT, or Gemini — with the ability to save a
-reusable assistant (**Projects** in Claude, **Custom GPTs** in ChatGPT, **Gems** in
-Gemini). Confirm this feature is on your plan before class (see `labs/SETUP.md`).
+**ChatGPT Enterprise** (Business plan) is the cohort's main tool — with the ability to save a
+reusable assistant (**Projects** and **Custom GPTs** in ChatGPT; **Projects** in Claude;
+**Gems** in Gemini as secondary demos). Your ChatGPT account is **Elephant Scale — Business**,
+so its Enterprise/Business data protections apply and the Gmail, Slack, and Google Drive
+connectors are available as your working environment. Confirm this feature is on your plan
+before class (see `labs/SETUP.md`).
 
 Templates you'll use:
 
@@ -44,24 +47,28 @@ over [`sample-support-emails.csv`](../assets/sample-support-emails.csv).
 3. **Version it.** Give it `v1.0` and start a changelog. Then make **one deliberate
    improvement** (e.g. add a source-boundary clause), bump to `v1.1`, and write the
    changelog line as cause → effect.
-4. **Save it as a reusable assistant.** Create a Project / Custom GPT / Gem. Put the role,
-   constraints, source rule, and output format into the saved instructions so users only
-   supply the input.
+4. **Save it as a reusable assistant.** Create a ChatGPT Project or Custom GPT (or a Claude
+   Project / Gemini Gem). Put the role, constraints, source rule, and output format into the
+   saved instructions so users only supply the input.
 
-   *Where to create it* (see `labs/SETUP.md`): **Claude** → Projects → New Project → add your
-   files to the project's knowledge; **ChatGPT** → Explore GPTs → Create; **Gemini** → Gems →
-   New Gem.
+   *Where to create it* (see `labs/SETUP.md`): **ChatGPT** → sidebar → **Projects** → new
+   Project → add files to the project; or **ChatGPT** → sidebar → **GPTs** → Create a GPT →
+   add instructions & files. As alternatives: **Claude** → Projects → New Project → add your
+   files to the project's knowledge; **Gemini** → Gems → New Gem.
 
 > **Before the fresh-session test — clean slate.** Test in a **new or temporary chat** with
 > **memory and custom instructions off** — otherwise your global settings might be supplying
-> the role, not your saved assistant, and the test proves nothing. In Claude use a new chat
-> (and check Settings → Profile); in ChatGPT use **Temporary Chat**; in Gemini turn off saved
-> info.
+> the role, not your saved assistant, and the test proves nothing. In ChatGPT use a
+> **Temporary Chat with memory & custom instructions off** (Settings → Personalization); in
+> Claude use a new chat (and check Settings → Profile); in Gemini turn off saved info.
 
 5. **Test the saved assistant** with a fresh input. Confirm someone who only provides the
    input gets the right output — no long prompt to paste.
 6. **Write the responsible-use note** (3 lines): what data may/may not go in, who signs off,
-   and the verification step that always stays.
+   and the verification step that always stays. Because you're working in **ChatGPT
+   Enterprise/Business** (the Elephant Scale account) with its data protections and the Gmail,
+   Slack, and Google Drive connectors available, make the data line about *what work data your
+   policy allows into ChatGPT* — the same human-review discipline still applies.
 
    If you're solo, name the **role** that would sign off rather than a person — e.g. "a
    manager reviews every compliance flag."
@@ -88,7 +95,8 @@ assistant:
 
 ```text
 I'm turning the prompt below into a reusable assistant that my team will run. Rewrite it as
-a set of standing INSTRUCTIONS for a saved assistant (Project / Custom GPT / Gem): state the
+a set of standing INSTRUCTIONS for a saved assistant (ChatGPT Project / Custom GPT, Claude
+Project, or Gemini Gem): state the
 role, the constraints, the source rule ("use only files/input the user provides; if the
 answer isn't there, say so"), and the exact output format. Write it so the user only has to
 supply the input. Keep it under 200 words.
@@ -100,8 +108,9 @@ supply the input. Keep it under 200 words.
 
 - One **completed library entry** (filled-in `prompt-library-template.md`) with a version
   number and a real changelog (at least v1.0 → v1.1).
-- A **saved reusable assistant** (Project / Custom GPT / Gem) that produces the right output
-  from input alone — capture a screenshot or the output of one test run.
+- A **saved reusable assistant** (ChatGPT Project / Custom GPT, Claude Project, or Gemini Gem)
+  that produces the right output from input alone — capture a screenshot or the output of one
+  test run.
 - A **3-line responsible-use note** plus a one-line **"when not to use AI"** for this prompt.
 
 ## Review
@@ -130,7 +139,7 @@ Recommended timing:
 | Instructor: lucky-prompt vs. reusable-asset demo | 10 |
 | Pick a prompt + document it | 15 |
 | Version it + write the changelog | 10 |
-| Save it as a Project/Custom GPT/Gem + test | 20 |
+| Save it as a ChatGPT Project/Custom GPT (or Claude Project/Gemini Gem) + test | 20 |
 | Responsible-use + when-not-to-use note | 10 |
 | Group share: two entries read aloud | 10 |
 
@@ -153,7 +162,8 @@ v1.1 — added "use only the attached file; if it isn't there, say so" → stopp
 
 ### Part 3 — Save a reusable assistant
 
-Create the Project / Custom GPT / Gem. Move the role, constraints, source rule, and format
+Create the ChatGPT Project / Custom GPT (or Claude Project / Gemini Gem). Move the role,
+constraints, source rule, and format
 into the **saved instructions**. Then start a fresh session and give it *only* the input —
 if it still produces the right output, the role is properly baked in.
 
@@ -241,7 +251,8 @@ Output a table (id, customer, type, urgency, first action) then a 3-line summary
   Metro Finance flagged as churn risk.
 
 ## Model / settings
-- Works on a fast model; use the reasoning model if the queue is large or messy.
+- Works on ChatGPT's fast default (GPT-5.x instant); switch the model picker to **Thinking**
+  (the reasoning option) if the queue is large or messy. Same idea on Claude/Gemini.
 
 ## Known limits & review step
 - It will theme free text by judgment; re-read the high-urgency rows before acting.
@@ -288,7 +299,8 @@ Why it's weak — walk the room through each line:
    especially **Inputs required** and **Known limits & review step**.
 3. Make the v1.1 improvement (add the source-boundary clause). Re-run. Show that it now says
    "not in the message" instead of guessing. Write the changelog line.
-4. Create a **Project / Custom GPT / Gem**. Paste the role/constraints/format into the saved
+4. Create a **ChatGPT Project / Custom GPT** (or Claude Project / Gemini Gem). Paste the
+   role/constraints/format into the saved
    **instructions** (not a chat message). Name it "Triage support queue".
 5. Start a **fresh** session in that saved assistant. Attach the CSV with **no prompt** (or
    just "go"). Show it produces the table anyway — the role is baked in.
@@ -337,7 +349,8 @@ A strong deliverable:
 
 - Names the prompt as **verb + object** and documents **explicit inputs**.
 - Has a **version** and a changelog line written as **change → effect**.
-- Is **saved as a Project/Custom GPT/Gem** that works from input alone (proven with a fresh run).
+- Is **saved as a ChatGPT Project/Custom GPT** (or Claude Project/Gemini Gem) that works from
+  input alone (proven with a fresh run).
 - Carries a **concrete review step** and a **specific responsible-use note**, plus a clear
   "when not to use AI" line.
 - Passes the cold-start test: a teammate could run it Monday without asking a question.

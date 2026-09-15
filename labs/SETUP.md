@@ -7,40 +7,64 @@ local development tools.
 
 - Modern browser: Chrome, Edge, Firefox, or Safari
 - Internet access
-- **A hands-on account for one current AI assistant** — Claude, ChatGPT, or Gemini — one
-  per student (see "Delivery model" below)
+- **A hands-on account for one current AI assistant** — **ChatGPT Enterprise (Business)** is
+  the primary tool for this cohort; Claude and Gemini are also supported — one per student
+  (see "Delivery model" below)
 - The sample files in `labs/assets/` and the templates in `course-materials/`
 
 ## Delivery model — every student has an account
 
 Each student has their own account to a frontier assistant, so **all lab work is
-hands-on**. The labs are written **assistant-agnostic**: examples lead with **Claude** and
-note the **ChatGPT** and **Gemini** equivalents, so they work whichever assistant your
-cohort is provisioned on.
+hands-on**. This cohort's primary tool is **ChatGPT Enterprise (Business)** — lead there for
+every lab. The labs are also written **assistant-agnostic**: examples work in **Claude** and
+**Gemini** too, which are supported as secondary alternatives the instructor may demo.
 
-- **Primary assistant (hands-on, every student):** the one your organization provisioned —
-  Claude, ChatGPT, or Gemini. Every lab's core steps are completed here.
+- **Primary assistant (hands-on, every student):** **ChatGPT Enterprise (Business)** on the
+  "Elephant Scale — Business" workspace. Every lab's core steps are completed here.
+- **Also supported (secondary / instructor may demo):** **Claude** and **Gemini**. The labs
+  give the equivalent steps for these where they differ.
 - **A second assistant (for the comparison labs):** Lab 01 and the Module 5 evaluation work
-  best when students can compare two. If students only have one assistant, the labs give a
+  best when students can compare two. If students only have ChatGPT, the labs give a
   fully supported single-assistant path: compare **two configurations of the same
-  assistant** — the standard model vs. the reasoning/"thinking" model, or a weak prompt vs.
-  a framed prompt. The instructor also demos a second vendor side-by-side on the projector.
+  assistant** — the fast/instant model vs. the **Thinking** (reasoning) model, or a weak
+  prompt vs. a framed prompt. The instructor also demos a second vendor (Claude or Gemini)
+  side-by-side on the projector.
 
 | Role | Who needs it | Tool |
 |------|--------------|------|
-| Student hands-on | every student | One of Claude, ChatGPT, or Gemini, with file upload enabled |
-| Comparison (optional) | instructor, or students who have it | A second assistant, OR a second config of the same one |
+| Student hands-on | every student | **ChatGPT Enterprise (Business)**, with file upload enabled (Claude or Gemini also supported) |
+| Comparison (optional) | instructor, or students who have it | A second assistant (Claude/Gemini), OR a second config of ChatGPT |
+
+### Account setup — ChatGPT Enterprise (Business), primary
+
+Every student signs in to the org workspace before class:
+
+1. Go to chatgpt.com and sign in with your Elephant Scale account. Confirm the
+   account/workspace switcher reads **"Elephant Scale — Business"** (top of the sidebar or
+   account menu) — not a personal account.
+2. Get familiar with the left **sidebar**: **New chat**, **Projects**, **GPTs**, **Library**,
+   **Plugins**, **Agents**. Lab 06 saves reusable context under **Projects** and **GPTs**.
+3. Note the **Chat / Work** mode toggle — stay in the mode your instructor specifies for a lab.
+4. **Connectors** (if enabled by the workspace admin): Gmail, Slack, and Google Drive can be
+   attached so ChatGPT can reference that content. Confirm which, if any, are turned on for
+   your seat.
+5. Note the **model picker** at the top of a chat: it shows the current GPT-5.x models with a
+   fast default (**instant**) and a separate **Thinking** (reasoning) option — see the model
+   note below.
+
+**Also supported (secondary):** Claude (claude.ai) and Gemini (gemini.google.com). Sign in
+to those only if the instructor is demoing them or a student's seat is provisioned there.
 
 ### Confirm before class
 
 Features differ by **plan**, **workspace/admin settings**, and **region**. Before teaching,
 confirm on the *actual* student accounts that these work:
 
-- Starting a new/temporary chat (to control for memory and custom instructions)
+- Starting a new/**Temporary Chat** (to control for memory and custom instructions)
 - **File upload** (PDF / CSV / image) — several labs depend on it
-- Switching between a **fast** model and a **reasoning/"thinking"** model
-- Saving reusable context — a **Project** (Claude), **Custom GPT** (ChatGPT), or **Gem**
-  (Gemini) — used in Lab 06
+- Switching between the **fast/instant** model and the **Thinking** (reasoning) model
+- Saving reusable context — a **Project** or **Custom GPT** (ChatGPT), a **Project** (Claude),
+  or a **Gem** (Gemini) — used in Lab 06
 
 > "It worked in the demo video" is not a plan. Check it on a student seat, on today's plan,
 > from the classroom network.
@@ -61,13 +85,25 @@ To use one: open the file in the course repo (or the GitHub Pages site), then ei
 **download** it and upload it into the assistant, or **copy its text** and paste it into the
 chat. Everything a lab needs is in the repo.
 
-## Turn off memory and custom instructions for comparisons
+## Clean-slate / fair-test — turn off memory and custom instructions
 
 When comparing prompts or models, memory and custom instructions silently change the output
-— you'd be testing your saved settings, not the prompt. Use a **temporary/new chat**, or
-turn off "reference saved memories" and clear custom instructions, before any comparison
-lab. This is the single most common cause of "we ran the same prompt and got different
-answers."
+— you'd be testing your saved settings, not the prompt. Start from a clean slate before any
+comparison lab. This is the single most common cause of "we ran the same prompt and got
+different answers."
+
+- **ChatGPT (primary):** open a **Temporary Chat** (top of the chat window), and turn off
+  **memory & custom instructions** under **Settings → Personalization** (disable "reference
+  saved memories" and clear custom instructions).
+- **Claude:** start a **new chat**, and clear/disable saved context under **Settings → Profile**.
+- **Gemini:** start a new chat and turn off **saved info** (Gemini's saved-info/personalization
+  settings).
+
+### Model picker note
+
+In ChatGPT, use the **GPT-5.x default (instant)** model for everyday drafting, and switch to
+**Thinking** (reasoning) for multi-step tasks — grounding checks, evaluation, and anything
+that needs careful reasoning. Several labs contrast the two, so know where the toggle is.
 
 ## Data rules
 

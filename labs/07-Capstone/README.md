@@ -18,10 +18,14 @@ You leave with a working solution, a guardrail, and a 30-day plan to adopt it.
 
 ## Tools
 
-**Your own assistant** — Claude, ChatGPT, or Gemini — plus the ability to save reusable
-context (a **Project** in Claude, a **Custom GPT** in ChatGPT, or a **Gem** in Gemini). If
-you don't have your own real material handy, a fully worked example using the provided
-sample data is in the Teacher's Playbook; you may adopt it.
+**ChatGPT Enterprise** (our cohort's assigned assistant — the "Elephant Scale — Business"
+account) is the primary tool; **Claude** and **Gemini** are available as alternatives. You
+will also save reusable context: a **Project** or a **GPT** in ChatGPT (Claude Projects or
+Gemini Gems are the equivalents). Because this is an Enterprise/Business environment, you can
+use the connectors (Gmail, Slack, Google Drive) to bring in real source material — apply the
+same source-boundary and human-review discipline described below. If you don't have your own
+real material handy, a fully worked example using the provided sample data is in the
+Teacher's Playbook; you may adopt it.
 
 Templates you will use:
 
@@ -44,14 +48,17 @@ Sample data (for the worked example or if you need a stand-in task):
    down now — it's half of your before/after.
 3. **Frame the prompt** with the anatomy: role, task, context, constraints, format. Attach
    your real source material and add *"use only this; if it's not here, say so."*
-4. **Decide: one prompt or a chain?** Try one prompt first. Only break it into a chain
-   (extract → draft → review) if a single prompt can't do it reliably. Don't over-build.
+4. **Decide: one prompt or a chain?** Try one prompt first, on the fast default model
+   (instant). Only break it into a chain (extract → draft → review), or switch to the
+   **Thinking** (reasoning) model, if a single prompt on the default can't do it reliably.
+   Don't over-build.
 5. **Evaluate** the output against [`../../course-materials/evaluation-rubric.md`](../../course-materials/evaluation-rubric.md).
    Score it. If it's below the bar, refine — **change one thing at a time** — and re-score.
 6. **Add a guardrail** on purpose: a source boundary, a human review step, a privacy rule,
    or an uncertainty flag. Be ready to say which failure it catches.
 7. **Package the winner**: fill in a [`library entry`](../../course-materials/prompt-library-template.md)
-   and save it as a **Project / Custom GPT / Gem** so it's reusable, not retyped.
+   and save it as a ChatGPT **Project** or **GPT** (or a Claude Project / Gemini Gem) so it's
+   reusable, not retyped.
 8. **Write a 30-day adoption plan** (week-by-week handoff to your team). A working skeleton:
    *wk1* — use it daily and log the misses; *wk2* — refine, lock the version, and write the
    library entry; *wk3* — hand it to one colleague cold (they run it without you); *wk4* —
@@ -151,26 +158,29 @@ Add the source boundary. Run it. Read the output against what you actually need.
 
 ### Part 3 - Decide on technique (part of the 40)
 
-Be deliberate: does this need a **chain** (the output of step 1 feeds step 2), a
-**reasoning model** (multi-step logic where a wrong middle step ruins the answer), or
-**grounding** (answer strictly from your documents)? If plain single-prompt works, that's a
-*better* answer, not a worse one.
+Be deliberate: does this need a **chain** (the output of step 1 feeds step 2), the
+**Thinking** (reasoning) model in the ChatGPT model picker — GPT-5.x — instead of the fast
+default/instant model (multi-step logic where a wrong middle step ruins the answer), or
+**grounding** (answer strictly from your documents)? If plain single-prompt on the default
+model works, that's a *better* answer, not a worse one.
 
 ### Part 4 - Evaluate and refine (part of the 40)
 
 Score with the rubric. Identify the lowest criterion, add the one clause that fixes it,
 re-run, re-score. Keep the higher-scoring version and note *which clause* moved the number.
 
-> Saved context is the *point* of this capstone — your Project/GPT/Gem helps by baking in
-> the role and source. But when you're comparing two versions to pick a winner, run them in
-> a clean chat, so you're scoring the prompt, not your saved memory.
+> Saved context is the *point* of this capstone — your ChatGPT Project/GPT (or Claude
+> Project / Gemini Gem) helps by baking in the role and source. But when you're comparing two
+> versions to pick a winner, run them in a clean chat, so you're scoring the prompt, not your
+> saved memory.
 
 ### Part 5 - Package (part of the 40)
 
-Fill in the library entry. Save the prompt as a Project / Custom GPT / Gem with the source
-material and role attached. The click-path: **Claude** — Projects → New Project → add your
-files to the project knowledge; **ChatGPT** — Explore GPTs → Create; **Gemini** — Gems → New
-Gem. Confirm it runs from the saved version, not your clipboard.
+Fill in the library entry. Save the prompt with the source material and role attached. The
+click-path: **ChatGPT** — either sidebar → **Projects** → new Project → add your files, or
+sidebar → **GPTs** → **Create a GPT** → add instructions & files; then, as alternatives,
+**Claude** — Projects → New Project → add your files to the project knowledge, or **Gemini** —
+Gems → New Gem. Confirm it runs from the saved version, not your clipboard.
 
 ### Part 6 - Plan and present (15 min + demos)
 
@@ -219,7 +229,8 @@ the sample data in `labs/assets/`, so you can reproduce it on screen.
 and drafts first replies. It takes about 90 minutes and the replies vary in tone and
 sometimes over-promise on refunds."
 
-**Solution:** a two-step chain, saved as a Project/Custom GPT/Gem, over
+**Solution:** a two-step chain, saved as a ChatGPT Project/GPT (or Claude Project / Gemini
+Gem), over
 `../assets/sample-support-emails.csv`, grounded in `../assets/sample-return-policy.md` and
 `../assets/sample-brand-voice.md`.
 
@@ -261,7 +272,8 @@ Guardrail: Northstar/HIPAA row is flagged and routed to a human, not answered; r
   terms quoted from the policy, not invented; [NEEDS REVIEW] tags on anything uncertain.
 Evaluation: scored 35/40 on the rubric; lost points only on Reusability (needs the CSV
   re-attached each week).
-Packaging: saved as a "Support Triage" Project with the policy + brand voice attached.
+Packaging: saved as a "Support Triage" ChatGPT Project (Enterprise) with the policy + brand
+  voice attached.
 Library entry: PL-021 v1.0, owner = Support lead, review step = lead approves before send.
 30-day plan: wk1 use daily + log misses; wk2 refine + lock v1.1; wk3 hand to one agent
   cold; wk4 roll to team, re-test reminder set for next model update.
@@ -299,7 +311,8 @@ Why it's weak — walk the room through it:
 1. Show the worked example end to end: run Step 1 on the CSV, then feed its table into Step
    2 with the policy and brand-voice files attached. Read one drafted reply aloud; point out
    it quoted the policy and flagged the HIPAA row.
-2. Save it live as a Project/Custom GPT/Gem so the room sees "prompt → product."
+2. Save it live as a ChatGPT Project/GPT (or Claude Project / Gemini Gem) so the room sees
+   "prompt → product."
 3. Release the room to choose their own challenge. Circulate; catch too-big and over-built.
 4. At the 40-minute mark, call "score it now" — no capstone proceeds without a rubric number.
 5. Run demos on a hard 3-minute clock. Score each against the capstone rubric in view.
@@ -314,8 +327,8 @@ Why it's weak — walk the room through it:
 - **'It felt faster.'** → "Put a number on before and after. No number, no before/after."
 - **No guardrail.** → "Name the one way this could be confidently wrong. Now add the control
   that catches it."
-- **Only they can run it.** → "Write the library entry and save it as a Project/GPT/Gem. If a
-  colleague can't run it cold, it's not done."
+- **Only they can run it.** → "Write the library entry and save it as a ChatGPT Project/GPT
+  (or Claude Project / Gemini Gem). If a colleague can't run it cold, it's not done."
 
 ### Debrief questions with model answers
 
@@ -332,10 +345,11 @@ Why it's weak — walk the room through it:
   A: It maps to a specific failure and someone acts on it. "Route compliance questions to a
   human" catches the HIPAA row; "[NEEDS REVIEW] tags" tell the approver where to look.
 
-- **Q: Why package it as a Project/GPT/Gem instead of a saved prompt?**
+- **Q: Why package it as a ChatGPT Project/GPT (or Claude Project / Gemini Gem) instead of a
+  saved prompt?**
   A: A saved prompt still depends on whoever remembers to paste it with the right files. A
-  Project/GPT/Gem bakes in the role and source material so every run is consistent and
-  anyone on the team gets the same result.
+  ChatGPT Project/GPT — or a Claude Project / Gemini Gem — bakes in the role and source
+  material so every run is consistent and anyone on the team gets the same result.
 
 - **Q: What belongs in the 30-day plan that people usually skip?**
   A: The cold hand-off — watching a colleague run it without you — and a re-test reminder

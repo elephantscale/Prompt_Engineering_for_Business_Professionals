@@ -30,15 +30,15 @@ This builds the intuition that Module 2 turns into a repeatable prompt anatomy.
 
 ## Tools
 
-Your own AI assistant — **Claude**, **ChatGPT**, or **Gemini** (examples below lead with
-Claude and note the others). Source material: [`sample-quarterly-report.md`](../assets/sample-quarterly-report.md).
+Your assigned tool is **ChatGPT Enterprise** (your Elephant Scale — Business account)
+(Claude or Gemini also work — instructor may demo). Examples below lead with ChatGPT and note
+the others. Source material: [`sample-quarterly-report.md`](../assets/sample-quarterly-report.md).
 If you also have a second assistant, you can add an optional fourth run to compare vendors.
 
-> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
-> custom instructions off**. Otherwise your saved settings change the output and you'll be
-> testing your preferences, not the knobs. In Claude use a new chat (and check Settings →
-> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
-> saved info / use a new chat.
+> **Before you start — clean slate.** In ChatGPT open a **New chat**; for a fair test use a
+> **Temporary Chat** and turn off **memory & custom instructions** (Settings → Personalization).
+> (Claude: new chat + Settings → Profile; Gemini: turn off saved info.) Otherwise your saved
+> settings change the output and you'll be testing your preferences, not the knobs.
 
 ## Steps
 
@@ -51,8 +51,9 @@ If you also have a second assistant, you can add an optional fourth run to compa
 3. **Run 2 — framed phrasing, with context.** New clean chat. **Attach** (or paste) the
    report and run the framed prompt in the Prompt Starter below. Compare to Run 1.
 4. **Run 3 — change the model.** Keep the framed prompt and the attached report **identical**,
-   but switch from the **fast** model to the **reasoning/"thinking"** model (model picker at
-   the top of the chat). Run it. Compare to Run 2.
+   but switch models. In ChatGPT, open the **model picker** at the top of the chat and switch
+   from the default/instant **GPT-5.x** model to the **Thinking** (reasoning) option. (Claude
+   and Gemini have an equivalent fast → reasoning picker.) Run it. Compare to Run 2.
 5. *(Optional) Run 4 — change the vendor.* If you have a second assistant, run the identical
    framed prompt + report there. Note any difference in how it handles uncertainty.
 6. Put the outputs side by side. Decide **which single change moved the output the most** for
@@ -126,7 +127,8 @@ compliance, and whether it stayed inside the document.
 
 ### Part 3 - Isolate the model (Knob 3)
 
-Now change **only** the model — fast → reasoning — with the prompt and file unchanged. This
+Now change **only** the model — in ChatGPT, the default/instant **GPT-5.x** model → the
+**Thinking** (reasoning) option in the model picker — with the prompt and file unchanged. This
 is a clean single-knob test. Ask: is the reasoning model's answer meaningfully more accurate
 or better-structured, or just phrased differently? For a short summary the honest answer is
 often "barely different" — which is itself the lesson (don't pay the reasoning tax when you
@@ -182,7 +184,8 @@ prompt is the Prompt Starter above. Run it three ways, changing one knob at a ti
 
 Prompt: `Summarize this quarterly report.` with **nothing attached.**
 
-A careful assistant (Claude especially) responds roughly:
+A careful assistant — demo this in **ChatGPT (GPT-5.x)**; Claude does this well too —
+responds roughly:
 
 ```text
 I'd be glad to — but I don't see a report attached. Could you paste the text or upload the
@@ -196,7 +199,7 @@ complete with fake numbers. Either way, the floor is set: no source, no real val
 > Teaching point: the "invent a summary" response is hallucination you can point at. The
 > "I don't see a file" response is the model being appropriately honest. Praise the second.
 
-### Run 2 — framed + grounded — a STRONG answer (what Claude tends to return)
+### Run 2 — framed + grounded — a STRONG answer (what ChatGPT (GPT-5.x) tends to return; Claude and Gemini similar)
 
 With the report attached and the framed prompt:
 
@@ -222,7 +225,8 @@ board-ready with almost no editing.
 
 ### Run 3 — switch to the reasoning model (what to expect)
 
-Same prompt, same file, reasoning model. For a short summary the result is usually **very
+Same prompt, same file, reasoning model — in ChatGPT, switch the model picker from the
+default/instant **GPT-5.x** model to the **Thinking** option. For a short summary the result is usually **very
 similar** — perhaps slightly tighter prioritization. The honest debrief line: *"It didn't
 get more correct; it got marginally better at judgment. Not worth the wait for this task —
 but watch what happens when we ask it to rank the open decisions."* Optionally demo that
@@ -252,14 +256,16 @@ Walk the room through each line:
 
 ### Live demo script (exact click-path)
 
-1. Open your assistant. Settings → **turn off memory and custom instructions** (say why:
-   fair test). Start a new chat.
+1. Open **ChatGPT** (Elephant Scale — Business account; Claude or Gemini also work).
+   Settings → Personalization → **turn off memory & custom instructions**, and use a
+   **Temporary Chat** (say why: fair test). Start a new chat.
 2. **Run 1:** type `Summarize this quarterly report.` with nothing attached. Read the
    response aloud — did it ask, or invent?
 3. New chat. **Run 2:** attach `labs/assets/sample-quarterly-report.md`, paste the framed
    Prompt Starter, send. Read it against the four requirements, checking each off.
-4. **Run 3:** in a new chat, switch the model picker to the reasoning/"thinking" model, paste
-   the **identical** prompt + file. Put Run 2 and Run 3 on screen together.
+4. **Run 3:** in a new chat, use the ChatGPT model picker to switch from the default/instant
+   GPT-5.x model to the **Thinking** (reasoning) option, paste the **identical** prompt + file.
+   Put Run 2 and Run 3 on screen together.
 5. Ask the room: "Which change — from Run 1→2, or Run 2→3 — moved the output more?" Let them
    answer before you do. (Answer: Run 1→2, by far.)
 6. Optional: ask the reasoning model `Of the open decisions in this report, which is most

@@ -16,7 +16,9 @@ Along the way, catch the one request in the queue that should be **escalated, no
 
 ## Tools
 
-Your assigned assistant — **Claude, ChatGPT, or Gemini**. Provided material:
+Your primary tool is **ChatGPT Enterprise** (our Elephant Scale — Business account) — every
+step below leads with it. **Claude** and **Gemini** stay available as secondary demos.
+Provided material:
 
 - [`sample-brand-voice.md`](../assets/sample-brand-voice.md) — the house style to match
 - [`sample-support-emails.csv`](../assets/sample-support-emails.csv) — the customer queue
@@ -27,16 +29,17 @@ You'll use the R-T-C-C-F-E template from Module 2
 ([`prompt-template.md`](../../course-materials/prompt-template.md)) and, for your own org,
 fill in [`brand-voice-worksheet.md`](../../course-materials/brand-voice-worksheet.md).
 
-> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
-> custom instructions off**. Otherwise your saved settings change the output and you'll be
-> testing your preferences, not your prompt. In Claude use a new chat (and check Settings →
-> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
-> saved info / use a new chat.
+> **Before you start — clean slate.** Otherwise your saved settings change the output and
+> you'll be testing your preferences, not your prompt. In **ChatGPT** (primary): start a
+> **New chat**; for a fair test use a **Temporary Chat** and turn off **memory & custom
+> instructions** (Settings → Personalization). (Claude: new chat + Settings → Profile;
+> Gemini: turn off saved info / use a new chat.)
 
 ## Steps
 
-1. **Load the brand voice first.** Paste `sample-brand-voice.md` into the chat (or save it
-   in a Project / Custom GPT / Gem) so every draft in this session inherits it.
+1. **Load the brand voice first.** Paste `sample-brand-voice.md` into the chat. To reuse it,
+   save it in a **ChatGPT Project** (sidebar) or a **Custom GPT** (alternatives: Claude
+   Projects / Gemini Gems) so every draft in this session inherits it.
 2. **Customer reply (grounded).** Take the duplicate-charge email from Acme (id 1) in the
    support CSV. Draft a reply that matches the brand voice **and** is grounded in the return
    policy — it must state the real refund terms and timeframe, not invent them.
@@ -136,8 +139,8 @@ notes?
 
 ## Instructor Flow
 
-Start by showing a **generic** AI reply to the Acme email (no brand voice, no policy) next
-to an **on-brand, grounded** one. The difference sells the module. Then have students build
+Start in **ChatGPT** (GPT-5.x) by showing a **generic** reply to the Acme email (no brand
+voice, no policy) next to an **on-brand, grounded** one. The difference sells the module. Then have students build
 their three artifacts. Close on the compliance catch — it's the memorable beat.
 
 Recommended timing:
@@ -177,6 +180,13 @@ Northstar Health asks about uploading patient records to a public AI tool. The t
 to answer it. Draft a short, on-brand reply that (a) doesn't give a compliance ruling, and
 (b) routes it to the right human. That judgment is the point of the exercise.
 
+> **Note — you're on ChatGPT Enterprise/Business.** Because this is our Elephant Scale —
+> Business account, approved work data and connectors (Gmail, Slack, Google Drive) may be in
+> play per company policy — but the same source-boundary and human-review discipline still
+> applies. Enterprise data handling does not make a HIPAA/regulated-data call yours (or the
+> model's) to make: still ground every fact in the supplied source, and still escalate a
+> compliance question to a human.
+
 ## Expected Result
 
 Students leave with three artifacts they could actually send after a light review, and — more
@@ -212,6 +222,9 @@ sections of their own brand-voice worksheet.
 
 ### The worked task (customer reply)
 
+Run this demo in **ChatGPT** (GPT-5.x — the fast/instant default is fine; switch the model
+picker to **Thinking** for the trickier grounding steps). Claude and Gemini produce the same
+shape of answer if you want a secondary demo.
 Load [`sample-brand-voice.md`](../assets/sample-brand-voice.md) and
 [`sample-return-policy.md`](../assets/sample-return-policy.md), then run the Prompt Starter
 on the Acme duplicate-charge email (id 1).
@@ -316,7 +329,8 @@ that isn't theirs to make. If the reply rules either way, it fails, no matter ho
 
 ### Live demo click-path
 
-1. New chat, memory off. Paste the brand-voice guide; say "obey this, don't summarize it."
+1. In ChatGPT (GPT-5.x): New chat (Temporary Chat, memory off). Paste the brand-voice guide;
+   say "obey this, don't summarize it."
 2. Paste the return policy. Paste the Acme email. Run the Prompt Starter.
 3. Read the result against the guide's do/don't list, out loud, checking each rule.
 4. Ask a follow-up live: `Shorten to 90 words and lead with the refund.` Show it tighten.

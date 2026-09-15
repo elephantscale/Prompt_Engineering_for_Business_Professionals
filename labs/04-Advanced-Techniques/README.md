@@ -16,8 +16,10 @@ checkable steps beats one do-everything prompt.
 
 ## Tools
 
-Your assigned assistant — **Claude, ChatGPT, or Gemini** — ideally the **reasoning/"thinking"**
-model for the review steps. Provided material:
+Your assigned assistant — **ChatGPT (Enterprise), Claude, or Gemini** — ideally the
+**Thinking** (reasoning) model rather than the fast default (instant) for the review steps.
+On ChatGPT that's the **Thinking** option in the model picker (currently GPT-5.x). Provided
+material:
 [`sample-meeting-notes.md`](../assets/sample-meeting-notes.md) is the source doc this lab is
 built around. [`sample-return-policy.md`](../assets/sample-return-policy.md) and
 [`sample-quarterly-report.md`](../assets/sample-quarterly-report.md) are **optional alternate
@@ -25,17 +27,20 @@ source docs** — if you'd rather run the chain on a policy Q&A or a report summ
 the meeting-notes email, swap one of them in as the grounding source and keep every step's
 "use only the source" boundary. You don't need them for the default task.
 
-> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
-> custom instructions off**. Otherwise your saved settings change the output and you'll be
-> testing your preferences, not your prompt. In Claude use a new chat (and check Settings →
-> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
-> saved info / use a new chat.
+> **Before you start — clean slate.** In **ChatGPT**, start a **New chat**; for a fair test
+> use a **Temporary Chat** and turn off **memory & custom instructions** (Settings →
+> Personalization). Otherwise your saved settings change the output and you'll be testing your
+> preferences, not your prompt. (Claude: new chat + Settings → Profile; Gemini: turn off saved
+> info / use a new chat.)
 
 ## Steps
 
 0. **Set up.** Open [`sample-meeting-notes.md`](../assets/sample-meeting-notes.md) in the
-   course repo and **attach** (or paste) it into your clean chat. This is the source every
-   step grounds against — keep it in the conversation for the whole chain.
+   course repo and **attach** (or paste) it into your clean chat. In **ChatGPT Enterprise**,
+   the primary grounding path is a **file upload** (or an **Enterprise connector** — Gmail,
+   Slack, Google Drive — pointed at the real doc); either way the discipline is the same. This
+   is the source every step grounds against — keep it in the conversation for the whole chain,
+   and keep the same source-boundary ("use only the source") no matter how it's attached.
 1. **Pick the deliverable.** Default: turn the messy meeting notes into a polished
    **stakeholder update email**. (Or choose a recurring deliverable from your own work.)
 2. **Step 1 - Extract.** Prompt the model to pull decisions + action items + owners from the
@@ -149,17 +154,19 @@ They also learn restraint: a chain is overkill for a task one prompt handles.
 ## Troubleshooting
 
 - **Model races ahead and does all steps at once.** Re-state: "Do only STEP 1 and stop."
-  Reasoning models especially like to sprint — rein them in.
+  Thinking (reasoning) models especially like to sprint — rein them in.
 - **Self-review just praises the draft.** Tighten the criteria and demand a minimum number
   of concrete issues; give it something specific to check (owners, the parked decision).
 - **Step 2 re-invents owners.** You fed it the raw notes instead of the Step 1 list. Feed
   the clean extract.
 - **Chain and one-shot look identical.** The task may be too simple to need a chain — a valid
   finding. Note it: not everything needs chaining.
-- **No reasoning model on my plan.** Fine — the review step (Step 3) leans on reasoning, but
-  any model can self-critique if you make the criteria specific. Use your best available model
-  and note which one; the chain still works. If Step 3 rubber-stamps, tighten it (demand two
-  concrete problems) rather than blaming the model.
+- **No Thinking (reasoning) model available.** Fine — the review step (Step 3) leans on
+  reasoning, so on **ChatGPT** pick the **Thinking** option in the model picker if you have it;
+  if you only have the fast default (instant), any model can still self-critique when you make
+  the criteria specific. Use your best available model and note which one; the chain still
+  works. If Step 3 rubber-stamps, tighten it (demand two concrete problems) rather than
+  blaming the model.
 
 ## Completion Criteria
 
@@ -218,7 +225,8 @@ Line by line:
 
 ### Live demo click-path
 
-1. New chat (reasoning model if available). Attach the meeting notes.
+1. New chat in ChatGPT (pick the **Thinking**/reasoning model if available). Attach the
+   meeting notes (file upload, or an Enterprise connector).
 2. Paste STEP 1. Read the extract aloud; highlight the "(unclear)" status-page line.
 3. Paste STEP 2. Show the draft built from the clean list.
 4. Paste STEP 3. Read its self-critique; confirm it catches the parked/decided distinction.

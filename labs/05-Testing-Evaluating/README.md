@@ -16,7 +16,8 @@ repairing it. You leave with a repeatable way to prove one prompt is better than
 
 ## Tools
 
-Your assigned assistant — **Claude, ChatGPT, or Gemini**. Provided material:
+Your assigned assistant — **ChatGPT Enterprise** (our main tool), with **Claude** or **Gemini**
+as secondary demos. Provided material:
 
 - [`prompt-eval-pairs.md`](../assets/prompt-eval-pairs.md) — two competing prompts + one broken prompt
 - [`sample-support-emails.csv`](../assets/sample-support-emails.csv) — the triage input
@@ -24,15 +25,18 @@ Your assigned assistant — **Claude, ChatGPT, or Gemini**. Provided material:
   [`sample-brand-voice.md`](../assets/sample-brand-voice.md) — for repairing the broken refund prompt
 - [`evaluation-rubric.md`](../../course-materials/evaluation-rubric.md) — the scoring rubric
 
-> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
-> custom instructions off**. Otherwise your saved settings change the output and you'll be
-> comparing your preferences, not the prompts. In Claude use a new chat (and check Settings →
-> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
-> saved info / use a new chat.
+> **Before you start — clean slate.** In **ChatGPT Enterprise**, start a **New chat**; for a
+> fair test use a **Temporary Chat** and turn off **memory & custom instructions**
+> (Settings → Personalization). Otherwise your saved settings change the output and you'll be
+> comparing your preferences, not the prompts. (Claude: new chat + Settings → Profile for
+> custom instructions; Gemini: turn off saved info / use a new chat.)
 
 ## Steps
 
-1. **Fair test.** New/temporary chat, memory off — or your comparison is meaningless.
+1. **Fair test.** In **ChatGPT Enterprise**, use a **Temporary Chat** with memory off and keep
+   the **same model** in the model picker (e.g. GPT-5.x, same instant vs. **Thinking** setting)
+   for both prompts — or your comparison is meaningless. (Claude/Gemini: new chat, memory off,
+   same model.)
 2. **Run Prompt A1 (thin)** from `prompt-eval-pairs.md` on the support CSV. Save the output.
 3. **Run Prompt A2 (framed)** — same input, new chat. Save the output.
 4. **Score both** against [`evaluation-rubric.md`](../../course-materials/evaluation-rubric.md),
@@ -132,8 +136,8 @@ Write a one-line reason next to every score. A score with no reason isn't a scor
 
 #### A weak A1 output, scored line by line
 
-A1's thin prompt tends to return something like this — read it before you score, then see why
-it fails against the CSV:
+A1's thin prompt, run in **ChatGPT (GPT-5.x)**, tends to return something like this — read it
+before you score, then see why it fails against the CSV:
 
 ```text
 Looks like a busy inbox! The main themes are billing questions, some shipping delays, and a
@@ -250,7 +254,7 @@ Failures (by mode):
 6. No format, no next step, no timeframe.
 ```
 
-### Model answer - repaired prompt output (what good looks like)
+### Model answer - repaired prompt output (what good looks like, in ChatGPT GPT-5.x)
 
 ```text
 Hi — you were charged twice for invoice #4471, and that's on us. I've started the refund
@@ -263,8 +267,9 @@ On brand, grounded (5 business days from the policy), no upsell, concrete timefr
 
 ### Live demo click-path
 
-1. New chat, memory off. Attach the CSV. Run A1. Read the vague result.
-2. New chat. Run A2 (same CSV). Read the structured result.
+1. ChatGPT Enterprise Temporary Chat, memory off, GPT-5.x. Attach the CSV. Run A1. Read the
+   vague result.
+2. New Temporary Chat, same model. Run A2 (same CSV). Read the structured result.
 3. Put both on screen; fill the rubric with the room, demanding a reason per score.
 4. Show the broken prompt. Ask the room to name each flaw before you touch it.
 5. Rewrite it live, grounded in the policy + brand voice. Re-run on the Acme email.

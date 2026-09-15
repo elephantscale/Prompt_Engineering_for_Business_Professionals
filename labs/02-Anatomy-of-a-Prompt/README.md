@@ -29,20 +29,24 @@ template you can use for everyday work.
 
 ## Tools
 
-**Your assistant** — Claude (lead examples), ChatGPT, or Gemini; whichever you've been given
-a hands-on account for. Provided material:
+**Your assistant** — **ChatGPT Enterprise** is the assigned primary tool for this cohort
+(Claude or Gemini also work); use whichever you've been given a hands-on account for.
+In ChatGPT, work from **New chat** in the sidebar (Projects and GPTs live there too), keep the
+**Chat/Work** toggle on Chat, and use the model picker (**GPT-5.x** — the fast/instant default,
+with a **Thinking** reasoning option) as noted below. Account: **Elephant Scale — Business**.
+Provided material:
 [`weak-prompts.md`](../assets/weak-prompts.md) (the eight prompts to rewrite),
 [`sample-return-policy.md`](../assets/sample-return-policy.md) (ground #5 and #8), and
 [`sample-quarterly-report.md`](../assets/sample-quarterly-report.md) (attach for #2 and #6).
 
 No account for a second assistant is needed — this lab is all hands-on in your own. If you
-want a comparison, rerun the weak vs. strong pair in a reasoning model as well.
+want a comparison, rerun the weak vs. strong pair in a reasoning model as well (in ChatGPT,
+switch the model picker to the **Thinking** option).
 
-> **Before you start — clean slate.** Open a **new or temporary chat** and turn **memory and
-> custom instructions off**. Otherwise your saved settings change the output and you'll be
-> testing your preferences, not your prompt. In Claude use a new chat (and check Settings →
-> Profile for custom instructions); in ChatGPT use **Temporary Chat**; in Gemini turn off
-> saved info / use a new chat.
+> **Before you start — clean slate.** In ChatGPT, open a **New chat**; for a fair test use a
+> **Temporary Chat** and turn off **memory & custom instructions** (Settings → Personalization).
+> Otherwise your saved settings change the output and you'll be testing your preferences, not
+> your prompt. (Claude: new chat + Settings → Profile; Gemini: turn off saved info.)
 
 ## Steps
 
@@ -223,7 +227,7 @@ cover something they asked, say "that isn't covered in our policy" rather than g
 End with one concrete next step.
 ```
 
-### Model answer — a STRONG response (what Claude tends to return)
+### Model answer — a STRONG response (what ChatGPT GPT-5.x tends to return)
 
 ```text
 Subject: Your refund question
@@ -239,6 +243,8 @@ If you'd like, I can cancel auto-renew for you now — just reply and confirm.
 Thanks,
 [Name] — Northwind Support
 ```
+
+(Claude and Gemini return very similar strong answers.)
 
 Why it's strong: every factual claim (14-day window, no auto-renew) is **from the policy**,
 it doesn't invent a goodwill refund the rep can't offer, and it ends with a real next step.
@@ -265,8 +271,8 @@ Why it's weak — walk the room through each line:
 
 ### Live demo script (exact click-path)
 
-1. Open your assistant. Start a **temporary/new chat** (say why: testing the prompt, not
-   memory).
+1. Open ChatGPT (Claude or Gemini also work). Start a **Temporary Chat** — New chat in the
+   sidebar, then Temporary (say why: testing the prompt, not memory).
 2. Run the **baseline** #8 with no file. Read the confident, invented policy aloud.
 3. Attach `labs/assets/sample-return-policy.md`. Paste the **strong rewrite**. Run it.
 4. Read the two side by side. Point at the 14-day rule in the policy file — show the strong
